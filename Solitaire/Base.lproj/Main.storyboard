@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,36 +15,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ed1-My-fBw">
-                                <rect key="frame" x="264" y="252" width="72" height="96"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="4vc-mL-R3V"/>
-                                    <constraint firstAttribute="width" secondItem="ed1-My-fBw" secondAttribute="height" multiplier="3:4" id="fcG-oh-sao"/>
-                                    <constraint firstAttribute="width" constant="72" id="zLB-eR-s3U"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="pGQ-nX-sp5" appends="YES" id="PNr-4g-5bB"/>
-                                </connections>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ed1-My-fBw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ac-O8-f26"/>
-                            <constraint firstItem="ed1-My-fBw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="65G-FF-tRm"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="card" destination="ed1-My-fBw" id="Cgw-TQ-Hlp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pGQ-nX-sp5">
-                    <connections>
-                        <action selector="cardTapped:" destination="BYZ-38-t0r" id="5CU-mO-j0M"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="194" y="351"/>
         </scene>
