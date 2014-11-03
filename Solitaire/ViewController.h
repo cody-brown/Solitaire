@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)cardTapped:(id)sender;
 
 @end
 

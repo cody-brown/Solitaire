@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) PlayingCardDeck *pcd;
+@property (strong, nonatomic) PlayingCard *cardModel;
+@property (weak, nonatomic) IBOutlet UIImageView *card;
 
 @end
 
@@ -16,7 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.pcd = [[PlayingCardDeck alloc] init];
+    self.cardModel = [self.pcd drawRandomCard];
+    self.card.image = self.cardModel.currentImage;
+    
+    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cardTapped:) ];
+    
+    self.card.userInteractionEnabled = YES;
+    [tgr setNumberOfTouchesRequired:1];
+    [self.card addGestureRecognizer:tgr];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +38,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cardTapped:(id)sender {
+    if(![self.cardModel isFaceUp]) {
+        [self.cardModel flip];
+    } else {
+        self.cardModel = [self.pcd drawRandomCard];
+    }
+    self.card.image = self.cardModel.currentImage;
+}
 @end
